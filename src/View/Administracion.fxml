@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="732.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdministracionController">
+   <children>
+      <SplitPane dividerPositions="0.15" orientation="VERTICAL" prefHeight="733.0" prefWidth="1283.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label fx:id="lbl_Administration" layoutX="71.0" layoutY="36.0" text="Administration">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="281.0" layoutY="41.0" spacing="15.0" />
+                  <HBox layoutX="268.0" layoutY="41.0" spacing="15.0">
+                     <children>
+                        <ToggleButton fx:id="btn_Create" layoutX="268.0" layoutY="41.0" mnemonicParsing="false" text="Create" />
+                        <ToggleButton fx:id="btn_Manage" layoutX="335.0" layoutY="41.0" mnemonicParsing="false" text="Manage" />
+                        <ToggleButton fx:id="btn_Reports" layoutX="415.0" layoutY="41.0" mnemonicParsing="false" text="Reports" />
+                        <ToggleButton fx:id="btn_Logout" layoutX="489.0" layoutY="41.0" mnemonicParsing="false" text="Log Out" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TabPane prefHeight="618.0" prefWidth="1283.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab fx:id="tab_BusinessUnit" text="Business Unit">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="lbl_BUName" layoutX="32.0" layoutY="42.0" text="Name" />
+                                    <Button fx:id="btn_BUSave" layoutX="320.0" layoutY="38.0" mnemonicParsing="false" text="Save" />
+                                    <TextField fx:id="txt_BUName" layoutX="119.0" layoutY="38.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="tab_Area" text="Area">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btn_Save" layoutX="311.0" layoutY="44.0" mnemonicParsing="false" text="Save" />
+                                    <Label layoutX="44.0" layoutY="48.0" text="Business Unit" />
+                                    <Label fx:id="lbl_AreaName" layoutX="83.0" layoutY="96.0" text="Name" />
+                                    <TextField fx:id="txt_AreaName" layoutX="128.0" layoutY="92.0" />
+                                    <ComboBox layoutX="128.0" layoutY="44.0" prefWidth="150.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="tab_Department" text="Department">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ComboBox fx:id="cmb_BU" layoutX="150.0" layoutY="71.0" prefWidth="150.0" />
+                                    <TextField fx:id="txt_DepartmentName" layoutX="151.0" layoutY="149.0" />
+                                    <Label fx:id="lbl_DepartmentName" layoutX="107.0" layoutY="153.0" text="Name" />
+                                    <Label fx:id="lbl_Bu" layoutX="71.0" layoutY="75.0" text="Business Unit" />
+                                    <Button fx:id="btn_SaveDepartment" layoutX="328.0" layoutY="149.0" mnemonicParsing="false" text="Save" />
+                                    <Label fx:id="lbl_Area" layoutX="111.0" layoutY="112.0" text="Area" />
+                                    <ComboBox fx:id="cmb_Area" layoutX="151.0" layoutY="108.0" prefWidth="150.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Prod Number">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                        <Tab text="Employee">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                        <Tab text="ReworkType">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
