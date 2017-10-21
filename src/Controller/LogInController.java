@@ -7,6 +7,7 @@ package Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.CallableStatement;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
-
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 /**
  * FXML Controller class
  *
@@ -28,6 +32,9 @@ import javax.swing.JOptionPane;
  */
 public class LogInController implements Initializable {
 
+    Model.Conection conn = new Model.Conection();
+    CallableStatement stmt;
+    ResultSet rs;
     /**
      * Initializes the controller class.
      */
@@ -47,9 +54,20 @@ public class LogInController implements Initializable {
     public void LogIn(){
         if (txt_User.getText().length() != 0 && !txt_Password.getText().isEmpty()){
             //Metodo log in
-        }
-        else {
-            //Mensaje llenar campos
+            Connection cn = conn.conexion();
+            int user = Integer.parseInt(txt_User.getText());
+            try {
+                stmt = cn.prepareCall("call login(?,?)");
+                stmt.setInt(1,user);
+                stmt.setString(2,txt_Password.getText());     
+                //ERROR
+                rs = stmt.executeQuery();
+                while(rs.next()) {
+                int rol =rs.getInt(8);
+}
+            } catch (Exception e) {
+            }
+            
         }
     }
     

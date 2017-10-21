@@ -13,17 +13,18 @@ import java.sql.DriverManager;
  * @author castrorj
  */
 public class Conection {
-    public void conexion() {
-        Connection conn = null;
+    Connection conn = null;
+    public Connection conexion(){
         try
-        {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = (Connection) DriverManager.getConnection("jdbc:mysql://sql10.freemysqlhosting.net/sql10196412","sql10196412", "2LSmsSSKAn");
-            System.out.print("Database is connected !");
-        }
-        catch(Exception e)
-        {
-            System.out.print("Do not connect to DB - Error:"+e);
-        }
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                conn = (Connection) DriverManager.getConnection("jdbc:mysql://sql10.freemysqlhosting.net/sql10196412","sql10196412", "2LSmsSSKAn");
+                System.out.print("Database is connected !");
+            }
+            catch(Exception e)
+            {
+                System.out.print("Do not connect to DB - Error:"+e);
+            }
+        return conn;
     }
 }
