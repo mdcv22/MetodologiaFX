@@ -55,16 +55,31 @@ public class LogInController implements Initializable {
         if (txt_User.getText().length() != 0 && !txt_Password.getText().isEmpty()){
             //Metodo log in
             Connection cn = conn.conexion();
+            int rol = 0;
             int user = Integer.parseInt(txt_User.getText());
             try {
-                stmt = cn.prepareCall("call login(?,?)");
+                stmt = cn.prepareCall("{CALL `login`(?, ?)}");
                 stmt.setInt(1,user);
                 stmt.setString(2,txt_Password.getText());     
                 //ERROR
                 rs = stmt.executeQuery();
                 while(rs.next()) {
-                int rol =rs.getInt(8);
-}
+                    rol =rs.getInt(1);
+                }
+                switch (rol)
+                {
+                    case 0:break; //Nada'
+                    case 1:
+                        //JOptionPane.showMessageDialog(null, "Rework");
+                        break;
+                    case 2:
+                        //JOptionPane.showMessageDialog(null, "Tecnico");
+                        break;
+                    case 3:
+                        //JOptionPane.showMessageDialog(null, "Supervisor");
+                        break;
+                }
+                        
             } catch (Exception e) {
             }
             
