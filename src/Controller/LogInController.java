@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import View.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
@@ -25,6 +26,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.stage.Modality;
 /**
  * FXML Controller class
  *
@@ -32,6 +38,8 @@ import java.sql.Statement;
  */
 public class LogInController implements Initializable {
 
+    private Stage primaryStage;
+    private AnchorPane rootLayout;
     Model.Conection conn = new Model.Conection();
     CallableStatement stmt;
     ResultSet rs;
@@ -86,8 +94,23 @@ public class LogInController implements Initializable {
         }
     }
     
-    public void FYP (){
-        View.Main main = new View.Main();
+    public void FYP () throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/ForgotPass.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setOpacity(1);
+        stage.setTitle("App");
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        stage.setX(bounds.getMinX());
+        stage.setY(bounds.getMinY());
+        stage.setWidth(bounds.getWidth());
+        stage.setHeight(bounds.getHeight());
+        stage.setScene(scene);
+        
+        stage.showAndWait();
     }
     
     public void Language (){
