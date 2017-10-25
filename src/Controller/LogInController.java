@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import View.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
@@ -21,14 +20,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.stage.Modality;
 /**
