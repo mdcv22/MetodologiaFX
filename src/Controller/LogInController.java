@@ -17,7 +17,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.sql.Connection;
@@ -31,8 +30,6 @@ import javafx.stage.Modality;
  */
 public class LogInController implements Initializable {
 
-    private Stage primaryStage;
-    private AnchorPane rootLayout;
     Model.Conection conn = new Model.Conection();
     CallableStatement stmt;
     ResultSet rs;
@@ -69,7 +66,8 @@ public class LogInController implements Initializable {
                 }
                 switch (rol)
                 {
-                    case 0:break; //Nada'
+                    case 0:
+                        break; //Nada'
                     case 1:
                         //JOptionPane.showMessageDialog(null, "Rework");
                         break;
