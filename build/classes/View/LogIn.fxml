@@ -2,46 +2,43 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
 <AnchorPane id="AnchorPane" fx:id="MainWindow" prefHeight="732.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
    <children>
-      <SplitPane fx:id="MainSplit" dividerPositions="0.29797979797979796" prefHeight="407.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane fx:id="left_Split" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="730.0" prefWidth="246.0">
-               <children>
-                  <Button fx:id="btn_FYP" layoutX="26.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#FYP" prefHeight="38.0" prefWidth="200.0" style="-fx-graphic: url(&quot;Images/lock.png&quot;);" text="Forgot your Password" />
-                  <Button fx:id="btn_Language" layoutX="26.0" layoutY="101.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Language" prefHeight="38.0" prefWidth="200.0" style="-fx-graphic: url(&quot;Images/translate.png&quot;);" text="Language" />
-                  <Button fx:id="btn_Exit" alignment="CENTER" layoutX="26.0" layoutY="640.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Exit" prefHeight="38.0" prefWidth="200.0" style="-fx-graphic: url(&quot;Images/shut-down.png&quot;);" />
-               </children>
-            </AnchorPane>
-          <AnchorPane fx:id="Right_Split" minHeight="0.0" minWidth="0.0" prefHeight="730.0" prefWidth="1047.0">
-               <children>
-                  <ImageView fx:id="img_Logo" fitHeight="94.0" fitWidth="291.0" layoutX="392.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="392.0" AnchorPane.rightAnchor="341.0">
-                     <image>
-                        <Image url="@../Images/Teradyne.png" />
-                     </image>
-                  </ImageView>
-                  <TextField fx:id="txt_User" alignment="CENTER" layoutX="392.0" layoutY="234.0" prefHeight="40.0" prefWidth="291.0" />
-                  <PasswordField fx:id="txt_Password" alignment="CENTER" layoutX="392.0" layoutY="280.0" prefHeight="40.0" prefWidth="291.0" />
-                  <Button fx:id="btn_LogIn" alignment="CENTER" layoutX="518.0" layoutY="338.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#LogIn" prefHeight="38.0" prefWidth="38.0" style="-fx-graphic: url(&quot;Images/log-in.png&quot;);" text="" />
-                  <ImageView fx:id="img_User" fitHeight="25.0" fitWidth="28.0" layoutX="351.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/user.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="img_Pass" fitHeight="25.0" fitWidth="34.0" layoutX="351.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/login.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+      <ImageView fx:id="img_Logo" fitHeight="94.0" fitWidth="291.0" layoutX="486.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="503.0">
+         <image>
+            <Image url="@../Images/Teradyne.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_Language" layoutX="1016.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Language" prefHeight="38.0" prefWidth="200.0" style="-fx-graphic: url(&quot;Images/translate.png&quot;); -fx-border-color: #0080ff #0080ff;" text="Language" textFill="#0080ff" />
+      <Pane layoutX="146.0" layoutY="160.0" prefHeight="436.0" prefWidth="607.0" style="-fx-background-color: #0080ff;">
+         <children>
+            <PasswordField fx:id="txt_Password" alignment="CENTER" layoutX="158.0" layoutY="259.0" prefHeight="40.0" prefWidth="291.0" />
+            <TextField fx:id="txt_User" alignment="CENTER" layoutX="158.0" layoutY="178.0" prefHeight="40.0" prefWidth="291.0" />
+            <ImageView fitHeight="78.0" fitWidth="83.0" layoutX="257.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/man.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_LogIn" alignment="CENTER" layoutX="277.0" layoutY="359.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#LogIn" prefHeight="38.0" prefWidth="38.0" style="-fx-graphic: url(&quot;Images/log-in.png&quot;); -fx-background-color: #0080ff #0080ff;" text="" />
+            <ImageView fx:id="img_User" fitHeight="40.0" fitWidth="44.0" layoutX="108.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Login.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img_Pass" fitHeight="40.0" fitWidth="40.0" layoutX="107.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/password.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_FYP" layoutX="257.0" layoutY="308.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#FYP" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #0080ff #0080ff;" text="Forgot your Password" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Button fx:id="btn_Exit" alignment="CENTER" layoutX="1016.0" layoutY="213.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Exit" prefHeight="38.0" prefWidth="200.0" style="-fx-graphic: url(&quot;Images/shut-down.png&quot;); -fx-border-color: #0080ff #0080ff;" />
    </children>
 </AnchorPane>
