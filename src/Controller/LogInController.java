@@ -45,6 +45,7 @@ public class LogInController implements Initializable {
     private Button btn_Exit;
     
     public void LogIn(){
+        //primaryStage.setScene();
         if (txt_User.getText().length() != 0 && !txt_Password.getText().isEmpty()){
             //Metodo log in
         }
