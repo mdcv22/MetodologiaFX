@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ControlTiempos.jnlp">
   <information>
@@ -9,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ControlTiempos.jar" size="70817" download="eager" />
+    <jar href="ControlTiempos.jar" size="74287" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.44-bin.jar" size="999635" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ControlTiempos" >
@@ -18,24 +17,3 @@
   <jfx:javafx-desc  width="800" height="600" main-class="View.Main"  name="ControlTiempos" />
   <update check="always"/>
 </jnlp>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ControlTiempos.jnlp">
-  <information>
-    <title>ControlTiempos</title>
-    <vendor>jonathancastro</vendor>
-    <description>null</description>
-    <offline-allowed/>
-  </information>
-  <resources>
-    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ControlTiempos.jar" size="19789" download="eager" />
-    <jar href="lib\mysql-connector-java-5.1.44-bin.jar" size="999635" download="eager" />
-  </resources>
-  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ControlTiempos" >
-    <param name="requiredFXVersion" value="8.0+"/>
-  </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="View.Main"  name="ControlTiempos" />
-  <update check="always"/>
-</jnlp>
->>>>>>> andres
