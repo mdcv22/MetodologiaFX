@@ -33,6 +33,7 @@ public class LogInController implements Initializable {
     Model.Conection conn = new Model.Conection();
     CallableStatement stmt;
     ResultSet rs;
+    Connection cn = conn.conexion();
     /**
      * Initializes the controller class.
      */
@@ -51,31 +52,27 @@ public class LogInController implements Initializable {
     
     public void LogIn(){
         if (txt_User.getText().length() != 0 && !txt_Password.getText().isEmpty()){
-            //Metodo log in
-            Connection cn = conn.conexion();
             int rol = 0;
-            int user = Integer.parseInt(txt_User.getText());
             try {
                 stmt = cn.prepareCall("{CALL `login`(?, ?)}");
-                stmt.setInt(1,user);
-                stmt.setString(2,txt_Password.getText());     
-                //ERROR
+                stmt.setInt(1,Integer.parseInt(txt_User.getText()));
+                stmt.setString(2,txt_Password.getText());
                 rs = stmt.executeQuery();
                 while(rs.next()) {
                     rol =rs.getInt(1);
                 }
                 switch (rol)
                 {
-                    case 0:
-                        break; //Nada'
                     case 1:
-                        //JOptionPane.showMessageDialog(null, "Rework");
+                        //Ventana Rework
                         break;
                     case 2:
-                        //JOptionPane.showMessageDialog(null, "Tecnico");
+                        //Ventana Tecnico
                         break;
                     case 3:
-                        //JOptionPane.showMessageDialog(null, "Supervisor");
+                        //Ventana Supervisor
+                        break;
+                    default:
                         break;
                 }
                         
@@ -100,7 +97,6 @@ public class LogInController implements Initializable {
         stage.setWidth(bounds.getWidth());
         stage.setHeight(bounds.getHeight());
         stage.setScene(scene);
-        
         stage.showAndWait();
     }
     
